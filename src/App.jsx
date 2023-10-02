@@ -37,17 +37,18 @@ function App() {
   return (
     <>
       <LearnSpell addSpell={addSpell} />
-      {spells.map((todo, index) =>
+      {spells.map((todo, spellKey) =>
         <>
           <div className="spell">
             <SpellSlots
-              key={index}
+              key={spellKey}
               spellKey={todo.spellKey}
               label={todo.label}
               prepped={todo.prepped}
               togglePrepped={togglePrepped}
               removeSpell={removeSpell}
             />
+
           </div>
         </>
       )}

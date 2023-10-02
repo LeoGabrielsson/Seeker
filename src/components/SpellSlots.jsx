@@ -1,18 +1,19 @@
 function SpellSlots(props) {
-    let { id, completed, label } = props
+    let { spellKey, prepped, label } = props
 
     return (
-        <div className="todo-item">
+        <>
             <label>{label}</label>
             <input
-                checked={completed}
+                checked={prepped}
                 onChange={() => {
-                    props.togglePrepped(id)
+                    props.togglePrepped(spellKey)
                 }}
                 type="checkbox" />
-            <button onClick={() => { props.removeSpell(id); }}>Rip card</button>
-        </div>
+            <button onClick={() => { props.removeSpell(spellKey); }}>Rip card</button>
+        </>
     )
 }
 
 export default SpellSlots
+
